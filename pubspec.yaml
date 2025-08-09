@@ -61,6 +61,8 @@ dev_dependencies:
   mocktail: ^1.0.4
   path_provider_platform_interface: ^2.1.2
   hive_test: ^1.0.1
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
   
 
 # For information on the generic Dart part of this file, see the
@@ -75,7 +77,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -104,3 +107,20 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: "launcher_icon" # Define que o ícone também será gerado para Android
+  ios: true # Define que o ícone também será gerado para iOS
+  image_path: "assets/icone.png" # Caminho para o seu arquivo de imagem PNG
+
+flutter_native_splash:
+  color: "#FFFFFF" # Cor de fundo da splash screen (em formato HEX)
+  image: assets/icone.png # Caminho para sua imagem PNG
+
+  # Opcional: Configurações específicas para Android
+  android_12:
+    image: assets/icone.png # Imagem para Android 12+ (Adaptive Icon)
+    color: "#FFFFFF" # Cor de fundo para Android 12+
+    # icon_background_color: "#111111" # Se usar uma imagem adaptativa, cor de fundo da área do ícone
+
+  # Opcional: Configurações específicas para iOS
+  ios_content_mode: "scaleAspectFit" # Como a imagem se ajusta na tela (ex: scaleAspectFill, center)
